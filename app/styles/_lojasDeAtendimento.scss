@@ -1,0 +1,261 @@
+.lojasDeAtendimento {
+  position: relative;
+
+  h3 {
+    @include font(36px, $circusia, $y_second, center);
+  }
+
+  .lojasLista {
+    margin-top: 49px;
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 975px) {
+      justify-content: center;
+    }
+
+    li {
+      @include font(18px, $flama-black, $y_second, center);
+      text-transform: uppercase;
+      line-height: 1.7;
+
+      h6 {
+        font-family: $flama-bold;
+        font-size: 31px;
+        font-weight: 900;
+      }
+
+      p {
+        font-family: $flama-light;
+      }
+
+      small {
+        font-size: 12px;
+        // line-height: 1.67;
+        display: flex;
+        justify-content: center;
+        margin-top: -15px;
+        font-family: $flama-light;
+
+        &::before {
+          display: inline-block;
+          content: '';
+          background: url('../images/lojasDeAtendimento/waze.png') no-repeat center center;
+          background-size: cover;
+          width: 24px;
+          height: 22px;
+          margin-right: 8px;
+        }
+
+      }
+    }
+  }
+
+  .agendeSuaVisita {
+    display: grid;
+    place-items: center;
+    margin: 67px auto 31px auto;
+    max-width: 555px;
+    width: 100%;
+    height: 47px;
+    border-radius: 23px;
+    background: url('../images/lojasDeAtendimento/bg_agendeSuaVisita.png') no-repeat center center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    @include font(27px, $flama-bold, $y_second, center);
+    text-transform: uppercase;
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  .agendeSuaVisistaDivisor {
+    max-width: 100%;
+    width: 100%;
+    height: 12px;
+    margin-top: 31px;
+    margin-bottom: 36px;
+    background: url('../images/lojasDeAtendimento/divisor.png') no-repeat center center;
+  }
+
+  .envolvidos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4%;
+
+    li {
+      margin: 0 20px 20px 20px;
+    }
+  }
+
+  .pop-up {
+    background: rgba(0, 0, 0, 0.9);
+    display: block;
+    left: 50%;
+    max-width: 833px;
+    padding: 10px 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: -4;
+    visibility: hidden;
+    opacity: 0;
+
+    // display: grid;
+    // place-items: start;
+
+    &.active {
+      z-index: 4;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .close {
+      margin-left: auto;
+      color: $y-second;
+      font-family: $flama-light;
+      cursor: pointer;
+      height: 22px;
+      text-align: right;
+      transition: all 0.3s linear;
+      margin-bottom: 20px;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+
+    form {
+      color: $y_second;
+
+      .containerInputText {
+        max-width: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10%;
+
+        @media screen and (max-width: 500px) {
+          grid-template-columns: 1fr;
+        }
+
+        input {
+          margin-top: 20px;
+          display: block;
+          background: transparent;
+          border: none;
+          padding: 10px;
+          border-bottom: 1px solid $y_second;
+          outline: none;
+          color: $y_second;
+
+          &::placeholder {
+            color: $y_second;
+          }
+        }
+      }
+
+      p {
+        margin: 40px 0;
+        text-transform: uppercase;
+      }
+
+
+      .checkboxContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        text-transform: uppercase;
+
+        .check-item {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          flex: 1 1 200px;
+
+          input[type='checkbox'] {
+            display: none;
+          }
+
+          label {
+            @include font(18px, $flama-bold, $y_second);
+            position: relative;
+            margin-left: 32px;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+              border: 1px solid $y_second;
+              margin-left: -30px;
+              position: absolute;
+              top: 8px;
+              box-sizing: border-box;
+            }
+
+            span {
+              font-family: $flama-light;
+              font-size: 12px;
+              display: block;
+            }
+          }
+
+          & input[type='checkbox']:checked~label {
+            &::after {
+              content: 'x';
+              position: absolute;
+              top: 2px;
+              left: -25px;
+            }
+          }
+        }
+      }
+
+      .submitContainer {
+        margin: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        .check-item {
+          label {
+            &::before {
+              top: 0px;
+            }
+          }
+
+          & input[type='checkbox']:checked~label {
+            &::after {
+              top: -5px;
+            }
+          }
+        }
+
+        .submit {
+          width: 125px;
+          height: 40px;
+          border-radius: 8px;
+          display: grid;
+          place-items: center;
+          @include font(18px, $flama-medium, #000, center);
+          background: url('../images/lojasDeAtendimento/bg_enviar.PNG')no-repeat center center;
+          background-size: cover;
+          border: none;
+          outline: none;
+          transition: all 0.3s linear;
+          
+          &:hover {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+}

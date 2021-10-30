@@ -1,9 +1,27 @@
-console.log('\'Allo \'Allo!');
+class HandlePopUp {
+  constructor (open, popUp) {
+    this.open = document.querySelector(open)
+    this.popUp = document.querySelector(popUp)
+    this.close = document.querySelector(popUp + ' .close')
+    this.handleClick = this.handleClick.bind(this)
+  }
 
-// Uncomment to enable Bootstrap tooltips
-// https://getbootstrap.com/docs/4.0/components/tooltips/#example-enable-tooltips-everywhere
-// $(function () { $('[data-toggle="tooltip"]').tooltip(); });
+  addEvents () {
+    this.open.addEventListener('click', this.handleClick)
+    this.close.addEventListener('click', this.handleClick)
+  }
 
-// Uncomment to enable Bootstrap popovers
-// https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
-// $(function () { $('[data-toggle="popover"]').popover(); });
+  handleClick (e) {
+    e.preventDefault()
+    this.popUp.classList.toggle('active')
+  }
+
+  init () {
+    console.log(this.open, this.popUp);
+    if (this.open && this.popUp && this.close) {
+      this.addEvents()
+    }
+  }
+}
+
+const popUp = new HandlePopUp('.open', '.pop-up').init()

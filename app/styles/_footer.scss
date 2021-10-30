@@ -1,0 +1,13 @@
+footer {
+  p {
+    @include font(9px, $carentro, $y-footer, justify);
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+    text-align: justify;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+}
