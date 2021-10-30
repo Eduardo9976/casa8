@@ -1,0 +1,6 @@
+@mixin font($size: 16px,$type: $carentro, $color: $y_primay, $texAlign: left) {
+  font-size: $size;
+  font-family: $type;
+  color: $color;
+  text-align: $texAlign;
+}

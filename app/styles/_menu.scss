@@ -1,0 +1,105 @@
+.menu-fluid {
+  margin: 0;
+  padding: 0;
+  background-color: $opacity-menu;
+
+  @media screen and (max-width: 575px) {
+    padding-left: 20px;
+  }
+
+  .menu-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+    & li {
+      padding-top: 27px;
+      padding-bottom: 24px;
+      cursor: pointer;
+      transition: transform 0.3s linear;
+
+      &:hover {
+        transform: scale(0.9);
+      }
+
+      & a {
+        @include font(21px, $carentro, $y_primay);
+        line-height: 1.19;
+        letter-spacing: 0.42px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1192px) {
+          font-size: 18px;
+          line-height: 1.19;
+        }
+
+        &::after {
+          content: '';
+          color:  $y_primay;
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: 8px;
+          margin-top: 10px;
+          background: url('../images/menu/barra-topo.png') no-repeat center center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
+
+/* Menu Mobile */
+.menu-mb-container {
+  padding: 20px 0;
+  display: none;
+
+  .dropdown-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: transform 0.3s linear;
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  a {
+    @include font(18px, $carentro, $y_primay);
+    line-height: 1;
+    letter-spacing: 0.42px;
+
+    &::after {
+      content: '';
+      color: $y_primay;
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: 8px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      background: url('../images/menu/barra-topo.png') no-repeat center center;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .menu-desktop {
+    display: none;
+  }
+
+  .menu-mb-container {
+    display: block;
+  }
+}

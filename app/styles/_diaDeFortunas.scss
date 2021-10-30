@@ -1,0 +1,74 @@
+.dia-de-fortunas {
+  .carousel-indicators {
+    bottom: -22px;
+  }
+
+  .carousel-indicators li {
+    display: block;
+    width: 7px;
+    height: 7px;
+    border: 2px solid $y_second;
+    border-radius: 50%;
+    opacity: 1;
+
+    &.active {
+      background: $y_second;
+    }
+  }
+
+  .carousel-control-prev-icon {
+    background: url('../images/diaDeFortunas/left.png') no-repeat center center;
+    background-size: cover;
+    width: 24px;
+    height: 33px;
+  }
+
+  .carousel-control-next-icon {
+    background: url('../images/diaDeFortunas/right.png') no-repeat center center;
+    background-size: cover;
+    width: 24px;
+    height: 33px;
+  }
+
+  h5 {
+    @include font(16px, $flama-medium, $y_second, center);
+    text-align: center;
+    text-shadow: 4.6px 5.3px 28px #000;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.03;
+    letter-spacing: 0.64px;
+  }
+
+  .slider-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    // margin: 73px 151px 68px 88px;
+    text-shadow: 4.6px 5.3px 28px #000;
+    @include font(13px, $flama-medium, $y_second);
+    font-weight: 500;
+    line-height: 1.62;
+    letter-spacing: 0.52px;
+
+    & span {
+      font-size: 20px;
+      letter-spacing: 0.8px;
+    }
+
+    & p {
+      // max-width: 38ch;
+      line-height: 2.19;
+    }
+
+    & img {
+      max-height: 208px;
+    }
+
+    @media screen and (max-witdh: 1000px) {
+      flex-direction: column;
+    }
+  }
+}
