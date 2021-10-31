@@ -8,11 +8,12 @@
 html {
   text-rendering: optimizeSpeed;
   font-size: 16px;
-  font-size: $carentro;
+  font-family: $carentro;
   scroll-behavior: smooth;
 }
 
 body {
+  font-family: $carentro;
   overflow-x: hidden;
 }
 

@@ -45,30 +45,53 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
-    // margin: 73px 151px 68px 88px;
     text-shadow: 4.6px 5.3px 28px #000;
     @include font(13px, $flama-medium, $y_second);
     font-weight: 500;
     line-height: 1.62;
     letter-spacing: 0.52px;
 
-    & span {
-      font-size: 20px;
-      letter-spacing: 0.8px;
-    }
-
-    & p {
-      // max-width: 38ch;
-      line-height: 2.19;
-    }
-
-    & img {
-      max-height: 208px;
-    }
-
     @media screen and (max-witdh: 1000px) {
       flex-direction: column;
+    }
+
+    @media screen and (max-width: 500px) {
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
+
+    .sliderImg {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 280px;
+      width: 100%;
+      height: 250px;
+    }
+
+    .sliderText {
+      @media screen and (max-width: 500px) {
+        height: 150px;
+      }
+
+      span {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        font-family: $flama-medium;
+      }
+
+      p {
+        line-height: 2.19;
+        font-family: $flama-medium;
+
+        @media screen and (max-width: 500px) {
+          font-size: 12px;
+          line-height: 2;
+        }
+      }
     }
   }
 }

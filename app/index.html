@@ -39,9 +39,9 @@
       <header class="menu-fluid">
         <div class="container menu-desktop">
           <ul class="menu-nav">
-            <li><a href="#"> Encontre seu imóvel </a></li>
+            <li><a href="#encontreSeuImovel"> Encontre seu imóvel </a></li>
             <li><a href="#"> Facilidades de compra </a></li>
-            <li><a href="#"> Lojas e atendimento </a></li>
+            <li><a href="#lojasDeAtendimento"> Lojas e atendimento </a></li>
             <li><a href="#"> Fale Conosco </a></li>
           </ul>
         </div>
@@ -57,11 +57,19 @@
             <img src="./images/menu/list.svg" />
           </div>
           <ul class="dropdown-menu menu-mobile" aria-labelledby="dropdownMenu">
-            <li><a class="dropdown-item" href="#"> Encontre seu imóvel </a></li>
+            <li>
+              <a class="dropdown-item" href="#encontreSeuImovel">
+                Encontre seu imóvel
+              </a>
+            </li>
             <li>
               <a class="dropdown-item" href="#"> Facilidades de compra </a>
             </li>
-            <li><a class="dropdown-item" href="#"> Lojas e atendimento </a></li>
+            <li>
+              <a class="dropdown-item" href="#lojasDeAtendimento">
+                Lojas e atendimento
+              </a>
+            </li>
             <li><a class="dropdown-item" href="#"> Fale conosco </a></li>
           </ul>
         </div>
@@ -109,10 +117,10 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <div class="slider-item">
-                <div>
+                <div class="sliderImg">
                   <img src="./images/diaDeFortunas/ferradura.png" alt="" />
                 </div>
-                <div>
+                <div class="sliderText">
                   <span>A FERRADURA SEGUNDO</span>
                   <p>
                     A LENDA, ST. DUNSTAN PRENDEU O DIABO <br />
@@ -124,10 +132,10 @@
             </div>
             <div class="carousel-item">
               <div class="slider-item">
-                <div>
+                <div class="sliderImg">
                   <img src="./images/diaDeFortunas/coelho.png" alt="" />
                 </div>
-                <div>
+                <div class="sliderText">
                   <span>O PÉ DE COELHO</span>
                   <p>
                     O PÉ DE COELHO REPRESENTA A FERTILIDADE DE COISAS BOAS.
@@ -140,10 +148,10 @@
             </div>
             <div class="carousel-item">
               <div class="slider-item">
-                <div>
+                <div class="sliderImg">
                   <img src="./images/diaDeFortunas/buda.png" alt="" />
                 </div>
-                <div>
+                <div class="sliderText">
                   <span>O BUDA RISONHO</span>
                   <p>
                     O BUDA RISONHO É ESPECIALMENTE SORTUDO. <br />
@@ -155,10 +163,10 @@
             </div>
             <div class="carousel-item">
               <div class="slider-item">
-                <div>
+                <div class="sliderImg">
                   <img src="./images/diaDeFortunas/trevo.png" alt="" />
                 </div>
-                <div>
+                <div class="sliderText">
                   <span>O TREVO DE 4 FOLHAS</span>
                   <p>
                     AS CHANCES DE ENCONTRAR UM TREVO DE QUATRO FOLHAS <br />
@@ -191,7 +199,7 @@
         </div>
       </section>
 
-      <section class="encontreSeuImovel container">
+      <section class="encontreSeuImovel container" id="encontreSeuImovel">
         <h3>Encontre seu imóvel</h3>
 
         <div class="flip-container">
@@ -224,14 +232,17 @@
               <img src="./images/encontreSeuImovel/cartaVirada.png" />
             </div>
             <div class="back">
-              <img src="./images/encontreSeuImovel/itaquera.png" />
+              <img
+                class="refImg"
+                src="./images/encontreSeuImovel/itaquera.png"
+              />
             </div>
           </div>
         </div>
         <div class="tourVirtual"></div>
       </section>
 
-      <section class="lojasDeAtendimento container">
+      <section class="lojasDeAtendimento container" id="lojasDeAtendimento">
         <h3>lojas de atendimento:</h3>
         <ul class="lojasLista">
           <li>
@@ -323,7 +334,7 @@
                 </label>
               </div>
 
-              <input class="submit" type="submit" value="Enviar">
+              <input class="submit" type="submit" value="Enviar" />
             </div>
           </form>
         </div>
@@ -441,6 +452,25 @@
           >
         </p>
       </footer>
+
+      <aside class="menuFixo">
+        <ul class="container">
+          <li>
+            <p>
+              Fale com um <br />
+              corretor online
+            </p>
+          </li>
+          <li>
+            <p>
+              <small>Telefone</small> <br />
+              (011) 99999-1212
+            </p>
+          </li>
+          <li><p>E-mail</p></li>
+          <li><p>Whatsapp</p></li>
+        </ul>
+      </aside>
     </main>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
