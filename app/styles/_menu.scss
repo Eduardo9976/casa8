@@ -74,6 +74,17 @@
     display: none;
   }
 
+  .menu-mobile {
+    max-width: 100%;
+    width: 100%;
+    margin-right: 5px;
+    background-color: #000;
+
+    li {
+      margin-bottom: 30px
+    }
+  }
+
   a {
     @include font(18px, $carentro, $y_primay);
     line-height: 1;

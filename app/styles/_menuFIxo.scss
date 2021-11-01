@@ -1,7 +1,7 @@
 .menuFixo {
   max-width: 100%;
   width: 100%;
-  background: rgba(0,0,0,0.5);
+  background-color: #000000;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -11,7 +11,7 @@
   transition: all 0.3s linear;
 
   &.active {
-    z-index: 100;
+    z-index: 5;
     visibility: visible;
     opacity: 1;
   }
@@ -19,26 +19,53 @@
   ul {
     display: flex;
     gap: 10px;
-    color: #fff;
+    color: $y_second;
     margin-bottom: 0;
+    justify-content: space-evenly;
+    height: 99px;
+
+    @media screen and (max-width: 975px) {
+      height: 60px;
+    }
+
+    @media screen and (max-width: 775px) {
+      gap: 0px;
+    }
+
+    @media screen and (max-width: 510px) {
+      z-index: -100 !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
 
     li {
       padding-right: 20px;
+      flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
 
+      @media screen and (max-width: 775px) {
+        padding-right: 0px;
+      }
+
       &::after {
         content: '';
         width: 2px;
-        height: 18px;
-        background: #fff;
+        height: 38px;
+        background: $y_second;
         display: inline-block;
         position: absolute;
         right: 0;
         top: auto;
         bottom: auto;
+
+        @media screen and (max-width: 975px) {
+          height: 18px;
+        }
       }
 
       &:last-child::after {
@@ -46,12 +73,95 @@
       }
     }
 
-    p {
-      font-size: 14px;
+    a {
+      font-size: 16px;
+      line-height: 20px;
       margin-bottom: 0;
-      line-height: normal;
-      padding: 10px 0;
+      color: $y_second;
       cursor: pointer;
+      position: relative;
+      transition: all 0.3s linear;
+
+      @media screen and (max-width: 975px) {
+        font-size: 14px;
+      }
+
+      @media screen and (max-width: 775px) {
+        font-size: 11px;
+      }
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+
+    .centralDeVendas {
+      font-size: 18px;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 26px;
+        height: 32px;
+        background: url('../images/menuFixo/Fone.png') no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+
+        @media screen and (max-width: 775px) {
+          display: none;
+        }
+      }
+
+      &::after {
+        content: 'Central de vendas';
+        font-size: 10px;
+        display: inline-block;
+        position: absolute;
+        top: -10px;
+        left: 30px;
+
+        @media screen and (max-width: 975px) {
+          top: -6px;
+        }
+
+        @media screen and (max-width: 775px) {
+          display: none;
+        }
+      }
+    }
+
+    .email {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 42px;
+        height: 32px;
+        background: url('../images/menuFixo/E-mail.png') no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 10px;
+
+        @media screen and (max-width: 775px) {
+          display: none;
+        }
+      }
+    }
+
+    .whatsapp {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: url('../images/menuFixo/WhatsApp.png') no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 10px;
+
+        @media screen and (max-width: 775px) {
+          display: none;
+        }
+      }
     }
   }
 }
