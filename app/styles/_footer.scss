@@ -1,4 +1,5 @@
 footer {
+  padding-bottom: 94px;
   p {
     @include font(9px, $carentro, $y-footer, justify);
     line-height: 1.33;

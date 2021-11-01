@@ -17,6 +17,11 @@
       type="text/css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.css"
+    />
+
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css" />
@@ -40,7 +45,7 @@
         <div class="container menu-desktop">
           <ul class="menu-nav">
             <li><a href="#encontreSeuImovel"> Encontre seu imóvel </a></li>
-            <li><a href="#"> Facilidades de compra </a></li>
+            <li><a href="#facilidadesDeCompra"> Facilidades de compra </a></li>
             <li><a href="#lojasDeAtendimento"> Lojas e atendimento </a></li>
             <li><a href="#"> Fale Conosco </a></li>
           </ul>
@@ -63,7 +68,9 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#"> Facilidades de compra </a>
+              <a class="dropdown-item" href="#facilidadesDeCompra">
+                Facilidades de compra
+              </a>
             </li>
             <li>
               <a class="dropdown-item" href="#lojasDeAtendimento">
@@ -242,6 +249,54 @@
         <div class="tourVirtual"></div>
       </section>
 
+      <section class="facilidadesDeCompra container" id="facilidadesDeCompra">
+        <h3>Facilidades de compra</h3>
+
+        <div class="facilidades">
+          <div class="row1">
+            <p>
+              Financiamento <br />
+              de até 90%
+            </p>
+            <p>
+              renda familiar <br />
+              a partir de 2.800,00
+            </p>
+          </div>
+
+          <div class="row2">
+            <p>
+              taxa de juros <br />
+              reduzida
+            </p>
+            <p>
+              Subsidio máximo <br />
+              de até R$ 29.000,00
+            </p>
+            <p>
+              Parcelas do <br />
+              financiamento em <br />
+              até 420 vezes
+            </p>
+            <p>
+              Escritura e ITBI <br />
+              grátis
+            </p>
+            <p>
+              Utilize seu FGTS <br />
+              para abater do seu <br />
+              saldo devedor
+            </p>
+            <p>
+              compra segura casa8 <br />
+              no caso de <br />
+              imprevistos financeiros.
+            </p>
+            <div class="col2">2 ##############</div>
+          </div>
+        </div>
+      </section>
+
       <section class="lojasDeAtendimento container" id="lojasDeAtendimento">
         <h3>lojas de atendimento:</h3>
         <ul class="lojasLista">
@@ -304,21 +359,32 @@
 
             <div class="checkboxContainer">
               <div class="check-item">
-                <input type="checkbox" name="freguesia" id="freguesia" />
+                <input
+                  type="radio"
+                  name="loja"
+                  id="freguesia"
+                  value="Freguesia do ó"
+                  checked
+                />
                 <label for="freguesia">
                   Freguesia do ó <br />
                   <span> Av. Santa Marina, 2360. </span>
                 </label>
               </div>
               <div class="check-item">
-                <input type="checkbox" name="osasco" id="osasco" />
+                <input type="radio" name="loja" id="osasco" value="Osasco" />
                 <label for="osasco">
                   Osasco <br />
                   <span> Av. Dionysia Alves Barreto, 520. </span>
                 </label>
               </div>
               <div class="check-item">
-                <input type="checkbox" name="itaquera" id="itaquera" />
+                <input
+                  type="radio"
+                  name="loja"
+                  id="itaquera"
+                  value="Itaquera"
+                />
                 <label for="itaquera">
                   Itaquera <br />
                   <span> Av. Jacu Pêssego. </span>
@@ -390,7 +456,7 @@
         </p>
 
         <p>
-          <small> IONEJI </small> *Somente para clientes enquadrados no programa
+          <span> IONEJI </span> *Somente para clientes enquadrados no programa
           CASA VERDE E AMARELA, consulte condições no stand. O projeto legal do
           empreendimento VIVA ITAQUERA encontra-se aprovado na Prefeitura
           Municipal de São Paulo, sob o número 2020/05396-00 e a incorporação
@@ -477,6 +543,12 @@
           </li>
         </ul>
       </aside>
+
+      <div class="tourContainer">
+        <span class="close container"> X </span>
+
+        <div id="viewer" style="max-width: 100%; width: 100vw;"></div>
+      </div>
     </main>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -509,6 +581,9 @@
       type="text/javascript"
       src="/node_modules/bootstrap/dist/js/bootstrap.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uevent@2/browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/photo-sphere-viewer@4/dist/photo-sphere-viewer.min.js"></script>
 
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
