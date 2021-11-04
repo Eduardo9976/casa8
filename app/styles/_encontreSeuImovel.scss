@@ -1,13 +1,20 @@
+.encontreSeuImovel_bg {
+  background: url('../images/encontreSeuImovel/bg-estelar.jpg') no-repeat top center fixed;
+  background-size: cover;
+
+}
 .encontreSeuImovel {
   padding-top: 73px;
   display: flex;
   justify-content: start;
   flex-direction: column;
   align-items: center;
-
+  
   h3 {
     @include font(36px, $circusia, $y_second, center);
     letter-spacing: 0.72px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
   }
 
   .flip-container {
