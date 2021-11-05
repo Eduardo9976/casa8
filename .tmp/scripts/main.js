@@ -40,6 +40,40 @@ var HandlePopUp = /*#__PURE__*/function () {
   return HandlePopUp;
 }();
 
+var HandleFlip = /*#__PURE__*/function () {
+  function HandleFlip(flipContainer) {
+    _classCallCheck(this, HandleFlip);
+
+    this.flips = document.querySelectorAll(flipContainer);
+    this.addClass = this.addClass.bind(this);
+  }
+
+  _createClass(HandleFlip, [{
+    key: "handleEvent",
+    value: function handleEvent() {
+      var _this = this;
+
+      this.flips.forEach(function (flip) {
+        flip.addEventListener('click', _this.addClass);
+      });
+    }
+  }, {
+    key: "addClass",
+    value: function addClass(e) {
+      !e.currentTarget.classList.contains('active') && e.currentTarget.classList.add('active');
+      e.currentTarget.removeEventListener('click', this.addClass);
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      this.flips && this.handleEvent();
+      return;
+    }
+  }]);
+
+  return HandleFlip;
+}();
+
 var VirtualTour = /*#__PURE__*/function () {
   function VirtualTour() {
     _classCallCheck(this, VirtualTour);
@@ -55,15 +89,15 @@ var VirtualTour = /*#__PURE__*/function () {
   _createClass(VirtualTour, [{
     key: "handleEvents",
     value: function handleEvents() {
-      var _this = this;
+      var _this2 = this;
 
       this.buttonsOpen.forEach(function (button) {
         return button.addEventListener('click', function () {
-          return _this.tourContainer.classList.add('active');
+          return _this2.tourContainer.classList.add('active');
         });
       });
       this.buttonClose.addEventListener('click', function () {
-        return _this.tourContainer.classList.remove('active');
+        return _this2.tourContainer.classList.remove('active');
       });
     }
   }, {
@@ -83,6 +117,7 @@ var VirtualTour = /*#__PURE__*/function () {
 
 (function () {
   var popUp = new HandlePopUp('.open', '.pop-up').init();
+  var flip = new HandleFlip('.flip-container').init();
   var virtualTour = new VirtualTour().init();
   var viewer = new PhotoSphereViewer.Viewer({
     container: document.querySelector('#viewer'),

@@ -23,6 +23,30 @@ class HandlePopUp {
   }
 }
 
+class HandleFlip {
+  constructor (flipContainer) {
+    this.flips = document.querySelectorAll(flipContainer)
+    this.addClass = this.addClass.bind(this)
+  }
+
+  handleEvent () {
+    this.flips.forEach(flip => {
+      flip.addEventListener('click', this.addClass)
+    })
+  }
+
+  addClass (e) {
+    !e.currentTarget.classList.contains('active') &&
+      e.currentTarget.classList.add('active')
+    e.currentTarget.removeEventListener('click', this.addClass)
+  }
+
+  init () {
+    this.flips && this.handleEvent()
+    return
+  }
+}
+
 class VirtualTour {
   constructor () {
     this.buttonsOpen = document.querySelectorAll('.tourVirtual')
@@ -46,8 +70,8 @@ class VirtualTour {
   }
 
   init () {
-    const baseHeight = (this.windowHeight - this.heightClose) - 40
-    this.setHeightViewer.style.height = `${ baseHeight }px`
+    const baseHeight = this.windowHeight - this.heightClose - 40
+    this.setHeightViewer.style.height = `${baseHeight}px`
     this.handleEvents()
   }
 }
@@ -56,7 +80,11 @@ class VirtualTour {
 
 ;(function () {
   const popUp = new HandlePopUp('.open', '.pop-up').init()
+
+  const flip = new HandleFlip('.flip-container').init()
+
   const virtualTour = new VirtualTour().init()
+
   const viewer = new PhotoSphereViewer.Viewer({
     container: document.querySelector('#viewer'),
     panorama: '../images/tourVirtual/pano.jpg',
@@ -66,7 +94,6 @@ class VirtualTour {
     navbar: ['fullscreen', 'zoom', 'autorotate', 'move', 'zoomOut', 'zoomIn']
   })
 
-  
   // height flip
   window.onload = function () {
     const flipperContainer = document.querySelectorAll('.flip-container')
